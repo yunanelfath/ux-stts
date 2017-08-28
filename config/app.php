@@ -145,6 +145,9 @@ return [
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
+        // http basic auth
+        Intervention\Httpauth\HttpauthServiceProvider::class,
+
         /*
          * Third Party Stuff
          */
@@ -207,6 +210,9 @@ return [
         /*
          * Custom Stuff
          */
+        
+        // http basic auth
+        'Httpauth' => Intervention\Httpauth\Facades\Httpauth::class,
 
         'Input'             => Illuminate\Support\Facades\Input::class,
         'Flash'             => Laracasts\Flash\Flash::class,

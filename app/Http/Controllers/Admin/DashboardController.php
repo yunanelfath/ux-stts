@@ -57,22 +57,22 @@ class DashboardController extends AdminController
     public function getIndex()
     {
         $statistics = [
-            'keywords' => LaravelAnalytics::getTopKeywords($this->period, $this->limit),
-            'referrers' => LaravelAnalytics::getTopReferrers($this->period, $this->limit),
-            'browsers' => LaravelAnalytics::getTopBrowsers($this->period, $this->limit),
-            'pages' => LaravelAnalytics::getMostVisitedPages($this->period, $this->limit),
-            'users' => LaravelAnalytics::getActiveUsers(),
-            'total_visits' => $this->getTotalVisits(),
-            'landings' => $this->getLandings(),
-            'exits' => $this->getExits(),
-            'times' => $this->getTimeOnPages(),
-            'sources' => $this->getSources(),
-            'ops' => $this->getOperatingSystems(),
-            'browsers' => $this->getBrowsers(),
-            'countries' => $this->getCountries(),
-            'visits' => $this->getDailyVisits(),
-            'regions' => $this->getRegions(),
-            'averages' => $this->getAverages()
+            // 'keywords' => LaravelAnalytics::getTopKeywords($this->period, $this->limit),
+            // 'referrers' => LaravelAnalytics::getTopReferrers($this->period, $this->limit),
+            // 'browsers' => LaravelAnalytics::getTopBrowsers($this->period, $this->limit),
+            // 'pages' => LaravelAnalytics::getMostVisitedPages($this->period, $this->limit),
+            // 'users' => LaravelAnalytics::getActiveUsers(),
+            // 'total_visits' => $this->getTotalVisits(),
+            // 'landings' => $this->getLandings(),
+            // 'exits' => $this->getExits(),
+            // 'times' => $this->getTimeOnPages(),
+            // 'sources' => $this->getSources(),
+            // 'ops' => $this->getOperatingSystems(),
+            // 'browsers' => $this->getBrowsers(),
+            // 'countries' => $this->getCountries(),
+            // 'visits' => $this->getDailyVisits(),
+            // 'regions' => $this->getRegions(),
+            // 'averages' => $this->getAverages()
         ];
         return view('admin.dashboard.index', compact('statistics'));
     }

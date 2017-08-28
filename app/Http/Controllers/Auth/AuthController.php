@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use Intervention\Httpauth\Httpauth;
+
 class AuthController extends Controller
 {
     /*
@@ -31,6 +33,8 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-         $this->middleware($this->guestMiddleware(), ['except' => ['logout', 'getLogout']]);
+        $config = array('username' => 'admin', 'password' => 'test');
+        $auth = Httpauth::make($config)->secure();
+        $this->middleware($this->guestMiddleware(), ['except' => ['logout', 'getLogout']]);
     }
 }

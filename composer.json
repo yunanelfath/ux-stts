@@ -15,6 +15,7 @@
 		"cviebrock/eloquent-sluggable" : "~3.1.4",
 		"barryvdh/laravel-elfinder": "0.3.*",
 		"spatie/laravel-analytics": "~1.1",
+		"intervention/httpauth": "^2.0",
 		"caffeinated/menus": "~2.0",
 		"yajra/laravel-datatables-oracle": "~6.0"
 	},
