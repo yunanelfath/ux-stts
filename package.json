@@ -1,6 +1,10 @@
 {
   "private": true,
+  "scripts": {
+    "start-install": "copy .env.example .env && php artisan key:generate && php artisan migrate && php artisan db:seed && npm install gulp bower && bower install && gulp --production && php artisan serve && explorer 'http://localhost:8000'"
+  },
   "devDependencies": {
+    "bower": "^1.8.2",
     "gulp": "^3.8.8"
   },
   "dependencies": {
