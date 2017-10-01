@@ -1,6 +1,7 @@
 .env
 .phpstorm.meta.php
 composer.lock
+.sass-cache/
 node_modules
 public/build
 public/css
