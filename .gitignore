@@ -4,6 +4,7 @@ composer.lock
 node_modules
 public/build
 public/css
+public/sass
 public/js
 public/uploads
 public/packages

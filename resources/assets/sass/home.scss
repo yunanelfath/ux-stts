@@ -1,0 +1,157 @@
+@import '../../../node_modules/materialize-css/sass/materialize';
+//colors
+$color_link_water_approx: #d3e4ed;
+$color_mine_shaft_approx: #333;
+$color_lochmara_approx: #0277bd;
+$white: #fff;
+$black_20: rgba(0, 0, 0, 0.2);
+$black_19: rgba(0, 0, 0, 0.19);
+$color_gallery_approx: #eee;
+
+//fonts
+$font_0: Material Icons;
+
+//urls
+$url_0: image-url('img/fronts.jpg');
+
+body {
+	background-color: $color_link_water_approx;
+	color: $color_mine_shaft_approx;
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+	min-width: 285px;
+	min-height: 100vh;
+}
+main {
+	flex: 1 0 auto;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1024px;
+}
+header {
+	background-image: $url_0;
+	background-position: center center;
+	background-size: cover;
+	height: 15em;
+	opacity: .7;
+	padding-top: 2.5em;
+}
+@media(max-width: 599px) {
+	header {
+		background-position: bottom center;
+	}
+	.survey-title {
+		margin-bottom: -8em;
+		top: -9em;
+	}
+}
+.small {
+	font-size: 14px;
+}
+a {
+	color: $color_lochmara_approx;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+h5 {
+	font-size: 1.3em;
+}
+label {
+	color: $color_mine_shaft_approx;
+}
+input[type='text'] {
+	font-size: 16px;
+}
+input[type='number'] {
+	font-size: 16px;
+}
+textarea {
+	font-size: 16px;
+}
+section {
+	margin: 50px auto;
+}
+.hr-custom {
+	border-top: solid 5px;
+	max-width: 85%;
+	margin: 40px auto 60px auto;
+	text-align: center;
+	&:after {
+		background-color: $white;
+		content: '\e8cd';
+		font-family: $font_0;
+		font-size: 2.5em;
+		padding: 0 .25em;
+		position: relative;
+		top: -.8em;
+	}
+}
+.survey-title {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 8px 17px 0 $black_20, 0 6px 20px 0 $black_19;
+	margin-bottom: -11em;
+	top: -12em;
+}
+@media(max-width: 500px) {
+	.survey-title {
+		margin-bottom: -6em;
+		top: -7em;
+	}
+}
+.logo {
+	margin-bottom: 0;
+	display: inline-block;
+	text-align: center;
+	.logo-stts{
+		display: inline-block;
+		margin: 0;
+		&:before{
+			content: '';
+			background-image: image-url('img/logo-stts.png');
+			background-size: cover;
+			height: 200px;
+			width: 200px;
+			display: inline-block;
+		}
+	}
+}
+.form {
+	background-color: $white;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 8px 17px 0 $black_20, 0 6px 20px 0 $black_19;
+	padding: 2em;
+	margin-bottom: 5em;
+	width: 90%;
+}
+.radio-label {
+	margin-bottom: .25em;
+	padding-right: .7em;
+}
+@media(min-width: 401px) and(max-width: 499px) {
+	.radio-label {
+		padding-right: .3em;
+	}
+}
+@media(max-width: 400px) {
+	.radio-label {
+		padding-right: 0;
+	}
+}
+.radio-button {
+	padding-top: .5em;
+}
+.day-label {
+	font-size: .8em;
+	font-weight: bold;
+	height: 33px;
+}
+.time-label {
+	font-size: .8em;
+	font-weight: bold;
+	margin-top: 1em;
+}
+.meetup-times .row {
+	border-bottom: 1px solid $color_gallery_approx;
+}
