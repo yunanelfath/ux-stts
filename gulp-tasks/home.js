@@ -14,8 +14,8 @@ var sources = {
 
   ],
   images: [
-    'public/assets/img/fronts.jpg',
-    'public/assets/img/logo-stts.png'
+    'resources/assets/images/fronts.jpg',
+    'resources/assets/images/logo-stts.png'
   ]
 };
 
