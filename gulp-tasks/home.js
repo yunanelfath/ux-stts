@@ -11,10 +11,14 @@ var sources = {
     'resources/assets/sass/home.scss'
   ],
   js: [
-
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/highlight.js/lib/highlight.js',
+    'node_modules/aos/dist/aos.js',
+    'resources/assets/js/home.js',
   ],
   images: [
     'resources/assets/images/fronts.jpg',
+    'resources/assets/images/auditorium.jpg',
     'resources/assets/images/logo-stts.png'
   ]
 };
@@ -46,4 +50,20 @@ elixir.extend('home_app',function(){
                    gulp.start(['copy_background']);
                  });
     }).watch(sources.scss);
+
+    new Task('home-js-desktop', function () {
+      return gulp.src(sources.js)
+      .pipe(concat('home.js'))
+      .pipe(gutil.env.production !== undefined && gutil.env.production ? uglify().on('error',function(error){
+         console.log(error);
+         this.emit('end')
+        }) : gutil.noop())
+      .pipe(gulp.dest('public/js'))
+      .on('end',function(){
+         // gulp.src(assets.input.home.input.desktop.js)
+         //     .pipe(shell(['gulp version']));
+         console.log('finish home-js-desktop');
+      });
+    }).watch(sources.js);
+
 })

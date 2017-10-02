@@ -1,157 +1,462 @@
 @import '../../../node_modules/materialize-css/sass/materialize';
-//colors
-$color_link_water_approx: #d3e4ed;
-$color_mine_shaft_approx: #333;
-$color_lochmara_approx: #0277bd;
+@import '../../../node_modules/aos/src/sass/aos';
+//colors//colors
+$color_manatee_approx: #898ea4;
+$color_cerulean_approx: deepskyblue;
+$color_malibu_approx: lightskyblue;
+$color_piper_approx: #c76b29;
+$color_marigold_approx: #c08b30;
+$color_pizazz_approx: darkorange;
+$color_curious_blue_approx: #22a2c9;
+$color_blue_marguerite_approx: #6679cc;
+$color_big_stone_approx: #202746;
+$color_santas_gray_approx: #979db4;
+$color_violet_red_approx: #ff4081;
+$color_cerulean_blue_approx: #37474f;
 $white: #fff;
-$black_20: rgba(0, 0, 0, 0.2);
-$black_19: rgba(0, 0, 0, 0.19);
-$color_gallery_approx: #eee;
+$black_50: rgba(0, 0, 0, 0.5);
+$white_30: rgba(255, 255, 255, 0.3);
+$color_black_rock_approx: #0e0f34;
+$white_20: rgba(255, 255, 255, 0.2);
+$white_60: rgba(255, 255, 255, 0.6);
 
 //fonts
-$font_0: Material Icons;
+$font_0: Helvetica;
+$font_1: Tahoma;
 
-//urls
-$url_0: image-url('img/fronts.jpg');
-
+.hljs-comment {
+	color: $color_manatee_approx;
+}
+.hljs-variable {
+	color: $color_cerulean_approx;
+}
+.hljs-tag {
+	color: $color_cerulean_approx;
+}
+.hljs-regexp {
+	color: $color_cerulean_approx;
+}
+.hljs-name {
+	color: $color_cerulean_approx;
+}
+.ruby {
+	.hljs-constant {
+		color: $color_cerulean_approx;
+	}
+	.hljs-symbol {
+		color: $color_pizazz_approx;
+	}
+	.hljs-class .hljs-title {
+		color: $color_marigold_approx;
+	}
+	.hljs-function .hljs-title {
+		color: $color_curious_blue_approx;
+	}
+	.hljs-title .hljs-keyword {
+		color: $color_curious_blue_approx;
+	}
+}
+.xml {
+	.hljs-pi {
+		color: $color_cerulean_approx;
+	}
+	.hljs-doctype {
+		color: $color_cerulean_approx;
+	}
+	.hljs-cdata {
+		color: $color_pizazz_approx;
+		opacity: 0.5;
+	}
+	.javascript {
+		opacity: 0.5;
+	}
+	.vbscript {
+		opacity: 0.5;
+	}
+	.css {
+		opacity: 0.5;
+	}
+	.hljs-tag .hljs-title {
+		color: $color_cerulean_approx;
+	}
+}
+.css {
+	.hljs-id {
+		color: $color_cerulean_approx;
+	}
+	.hljs-class {
+		color: $color_cerulean_approx;
+	}
+	.hljs-pseudo {
+		color: $color_cerulean_approx;
+	}
+	.hljs-hexcolor {
+		color: $color_curious_blue_approx;
+	}
+	.hljs-rule .hljs-attribute {
+		color: $color_marigold_approx;
+	}
+}
+.hljs-attribute {
+	color: $color_malibu_approx;
+}
+.hljs-number {
+	color: $color_piper_approx;
+}
+.hljs-preprocessor {
+	color: $color_piper_approx;
+}
+.hljs-built_in {
+	color: $color_piper_approx;
+}
+.hljs-literal {
+	color: $color_piper_approx;
+}
+.hljs-params {
+	color: $color_piper_approx;
+}
+.hljs-constant {
+	color: $color_piper_approx;
+}
+.hljs-string {
+	color: $color_pizazz_approx;
+}
+.hljs-value {
+	color: $color_pizazz_approx;
+}
+.hljs-inheritance {
+	color: $color_pizazz_approx;
+}
+.hljs-header {
+	color: $color_pizazz_approx;
+}
+.hljs-title {
+	color: $color_curious_blue_approx;
+}
+.hljs-function {
+	color: $color_curious_blue_approx;
+}
+.python {
+	.hljs-decorator {
+		color: $color_curious_blue_approx;
+	}
+	.hljs-title {
+		color: $color_curious_blue_approx;
+	}
+}
+.javascript {
+	.hljs-title {
+		color: $color_curious_blue_approx;
+	}
+	.hljs-function {
+		color: $color_blue_marguerite_approx;
+	}
+	.xml {
+		opacity: 0.5;
+	}
+}
+.coffeescript {
+	.hljs-title {
+		color: $color_curious_blue_approx;
+	}
+	.javascript {
+		opacity: 0.5;
+	}
+}
+.hljs-keyword {
+	color: $color_blue_marguerite_approx;
+}
+.hljs {
+	display: block;
+	overflow-x: auto;
+	background: $color_big_stone_approx;
+	color: $color_santas_gray_approx;
+	padding: 0.5em;
+}
 body {
-	background-color: $color_link_water_approx;
-	color: $color_mine_shaft_approx;
-	display: flex;
-	flex-direction: column;
-	font-size: 16px;
-	min-width: 285px;
-	min-height: 100vh;
+	font-family: $font_0, $font_1;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
 }
-main {
-	flex: 1 0 auto;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1024px;
-}
-header {
-	background-image: $url_0;
-	background-position: center center;
-	background-size: cover;
-	height: 15em;
-	opacity: .7;
-	padding-top: 2.5em;
-}
-@media(max-width: 599px) {
-	header {
-		background-position: bottom center;
+* {
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+	&:before {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
 	}
-	.survey-title {
-		margin-bottom: -8em;
-		top: -9em;
+	&:after {
+		//Instead of the line below you could use @include box-sizing($bs)
+		box-sizing: border-box;
 	}
-}
-.small {
-	font-size: 14px;
 }
 a {
-	color: $color_lochmara_approx;
-	&:hover {
-		text-decoration: underline;
+	text-decoration: none;
+	color: $color_violet_red_approx;
+}
+.backgrounds {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-image: image-url('img/auditorium.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: translateZ(0);
+	z-index: -1;
+	.background {
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-attachment: fixed;
 	}
 }
-h5 {
-	font-size: 1.3em;
-}
-label {
-	color: $color_mine_shaft_approx;
-}
-input[type='text'] {
-	font-size: 16px;
-}
-input[type='number'] {
-	font-size: 16px;
-}
-textarea {
-	font-size: 16px;
-}
-section {
-	margin: 50px auto;
-}
-.hr-custom {
-	border-top: solid 5px;
-	max-width: 85%;
-	margin: 40px auto 60px auto;
+.hero {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	color: $white;
 	text-align: center;
-	&:after {
-		background-color: $white;
-		content: '\e8cd';
-		font-family: $font_0;
-		font-size: 2.5em;
-		padding: 0 .25em;
-		position: relative;
-		top: -.8em;
+}
+.hero-center {
+	width: 100%;
+	position: absolute;
+	top: 40%;
+	left: 0;
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: translate(0, -50%);
+}
+.hero__logo {
+	font-size: 60px;
+	color: $black_50;
+}
+.hero__text {
+	font-weight: normal;
+	opacity: 0.8;
+}
+.hero__scroll {
+	position: absolute;
+	bottom: 60px;
+	width: 200px;
+	margin: auto;
+	display: block;
+	cursor: pointer;
+	padding-bottom: 40px;
+	left: 0;
+	right: 0;
+	text-transform: uppercase;
+	.chevron {
+		margin-top: 20px;
+		display: block;
+		animation: pulse 2s infinite;
+		color: $color_violet_red_approx;
 	}
 }
-.survey-title {
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 8px 17px 0 $black_20, 0 6px 20px 0 $black_19;
-	margin-bottom: -11em;
-	top: -12em;
-}
-@media(max-width: 500px) {
-	.survey-title {
-		margin-bottom: -6em;
-		top: -7em;
+@-webkit-keyframes pulse {
+	0% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, 0);
+	}
+	50% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, 10px);
+	}
+	100% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, 0);
 	}
 }
-.logo {
-	margin-bottom: 0;
+@keyframes pulse {
+	0% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, 0);
+	}
+	50% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, 10px);
+	}
+	100% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(0, 0);
+	}
+}
+.octocat {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 80px;
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+.chevron::before {
+	border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	content: '';
 	display: inline-block;
+	height: 20px;
+	position: relative;
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 20px;
+}
+.chevron {
+	&.right:before {
+		left: 0;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: rotate(45deg);
+	}
+	&.bottom:before {
+		top: 0;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: rotate(135deg);
+	}
+	&.left:before {
+		left: 0.25em;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: rotate(-135deg);
+	}
+}
+.section {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+.section-title {
 	text-align: center;
-	.logo-stts{
-		display: inline-block;
+	color: $white;
+	text-transform: uppercase;
+	font-weight: normal;
+	padding: 30px 0;
+	border-top: 1px solid $white_30;
+	border-bottom: 1px solid $white_30;
+	width: 100%;
+	clear: both;
+}
+.container {
+	width: 970px;
+	margin: 0 auto;
+	max-width: 90%;
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: translateZ(1000px);
+}
+.code {
+	width: 40%;
+	clear: both;
+	height: 200px;
+	background: $white;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 2px;
+	margin: 12vh 0;
+	padding: 10px;
+	pre {
+		height: 100%;
 		margin: 0;
-		&:before{
-			content: '';
-			background-image: image-url('img/logo-stts.png');
-			background-size: cover;
-			height: 200px;
-			width: 200px;
-			display: inline-block;
+	}
+	code {
+		height: 100%;
+		margin: 0;
+		padding: 20px 0 0 20px;
+	}
+}
+.code--left {
+	float: left;
+}
+.code--right {
+	float: right;
+}
+.code--wider {
+	width: 60%;
+	code {
+		padding-top: 60px;
+	}
+}
+.section--more {
+	color: $white;
+	background: $color_black_rock_approx;
+	padding: 20px 0 40px;
+}
+.section-group {
+	border-bottom: 1px solid $white_20;
+	padding: 30px 0;
+	h3 {
+		margin: 0 0 20px 0;
+		text-transform: uppercase;
+	}
+	h4 {
+		font-weight: normal;
+		color: $white_60;
+	}
+	code {
+		padding: 20px;
+		font-size: 1.2em;
+	}
+	.btn {
+		margin-right: 20px;
+	}
+}
+.btn {
+	padding: 10px 20px;
+	border: 1px solid $color_violet_red_approx;
+	display: inline-block;
+	position: relative;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: all 0.2s ease;
+	overflow: hidden;
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 1px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		background: $color_violet_red_approx;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: transform 0.2s ease;
+		z-index: 0;
+		opacity: 0;
+	}
+	span {
+		position: relative;
+		z-index: 5;
+	}
+	&:hover {
+		color: $white;
+		&:before {
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: scaleX(200);
+			opacity: 1;
 		}
 	}
 }
-.form {
-	background-color: $white;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 8px 17px 0 $black_20, 0 6px 20px 0 $black_19;
-	padding: 2em;
-	margin-bottom: 5em;
-	width: 90%;
+.html .hljs-doctype {
+	color: $color_cerulean_approx;
 }
-.radio-label {
-	margin-bottom: .25em;
-	padding-right: .7em;
+.perl .hljs-sub {
+	color: $color_curious_blue_approx;
 }
-@media(min-width: 401px) and(max-width: 499px) {
-	.radio-label {
-		padding-right: .3em;
-	}
+.tex .hljs-formula {
+	opacity: 0.5;
 }
-@media(max-width: 400px) {
-	.radio-label {
-		padding-right: 0;
-	}
+.overlay:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: $color_cerulean_blue_approx;
+	opacity: 0.8;
 }
-.radio-button {
-	padding-top: .5em;
-}
-.day-label {
-	font-size: .8em;
-	font-weight: bold;
-	height: 33px;
-}
-.time-label {
-	font-size: .8em;
-	font-weight: bold;
-	margin-top: 1em;
-}
-.meetup-times .row {
-	border-bottom: 1px solid $color_gallery_approx;
+.code--small code {
+	padding-top: 75px;
 }

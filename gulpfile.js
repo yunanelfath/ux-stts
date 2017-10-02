@@ -16,6 +16,7 @@ elixir(function(mix) {
     }
     mix.version([
       'css/home.css',
+      'js/home.js',
       'css/admin.css',
       'css/application.css',
       'js/admin.js',

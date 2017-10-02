@@ -1,691 +1,210 @@
 @extends('layouts.application')
 @section('content')
-  <header></header>
-<main>
-  <div class="row">
-    <div class="survey-title card blue-grey darken-3 col s10 offset-s1 m6 offset-m3">
-      <div class="card-content grey-text text-lighten-3 center-align">
-        <div class="logo valign-wrapper">
-          <div class="logo-stts">
-          </div>
-        </div>
-        <div class="card-title">Sekolah Tinggi Teknik Surabaya</div>
-        <p>We would love to hear your anonymous thoughts and feedback on how we can improve our
-          Bainbridge NodeSchool and Open Project meetup events.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="container form">
-    <form name="NodeSchool" enctype="application/json" action="#" method="POST">
-      <h4 class="center-align">Our Last Event</h4>
-      <p class="small center-align">If you did not attend our last event, please skip to the
-        <a href="#future">next section</a>.</p>
-      <hr class="hr-custom">
-      <section id="last-event">
-        <h5>Did you enjoy our last event?</h5>
-        <div class="row radio-labels center-align">
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button right-align">Not fun at all!&nbsp;</div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">1</div>
-            <div class="row grey lighten-4 radio-button">
-              <input value="1" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-1" />
-              <label for="enjoy-last-event-1"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">2</div>
-            <div class="row grey lighten-4 radio-button">
-              <input value="2" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-2" />
-              <label for="enjoy-last-event-2"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">3</div>
-            <div class="row grey lighten-4 radio-button">
-              <input value="3" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-3" />
-              <label for="enjoy-last-event-3"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">4</div>
-            <div class="row grey lighten-4 radio-button">
-              <input value="4" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-4" />
-              <label for="enjoy-last-event-4"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">5</div>
-            <div class="row grey lighten-4 radio-button">
-              <input value="5" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-5" />
-              <label for="enjoy-last-event-5"></label>
-            </div>
-          </div>
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button left-align">&nbsp;Great time!</div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h5>How did you find out about the event?</h5>
-        <div class="input-field">
-          <input id="find-last-event" type="text">
-          <label for="find-last-event">Your answer</label>
-        </div>
-      </section>
-      <section>
-        <h5>How was the venue?</h5>
-        <div class="row">
-          <div class="col s12">
-            <p>
-              <input type="checkbox" id="venue-1" value="Easy to access" />
-              <label for="venue-1">Easy to access?</label>
-            </p>
-            <p>
-              <input type="checkbox" id="venue-2" value="Enough room to sit and code" />
-              <label for="venue-2">Enough room to sit and code?</label>
-            </p>
-            <p>
-              <input type="checkbox" id="venue-3" value="Easy to find" />
-              <label for="venue-3">Easy to find?</label>
-            </p>
-            <p>
-              <input type="checkbox" id="venue-4" value="Equipped for your needs" />
-              <label for="venue-4">Equipped for your needs?</label>
-            </p>
-            <div class="input-field">
-              <input id="venuefeedback" type="text">
-              <label for="venuefeedback">Additional Venue Feedback?</label>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h5>How can we make the event better next time?</h5>
-        <div class="input-field col s12">
-          <input id="make-event-better" type="text">
-          <label for="make-event-better">Your answer</label>
-        </div>
-      </section>
-      <section id="future">
-        <h4 class="center-align">Future Events</h4>
-        <hr class="hr-custom">
-      </section>
-      <section>
-        <h5>How interested are you in attending upcoming events?</h5>
-        <div class="row radio-labels center-align">
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button right-align">Not at all&nbsp;</div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">1</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="enjoy-next-event" type="radio" id="enjoy-next-event-1" value="1" />
-              <label for="enjoy-next-event-1"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">2</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="enjoy-next-event" type="radio" id="enjoy-next-event-2" value="2" />
-              <label for="enjoy-next-event-2"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">3</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="enjoy-next-event" type="radio" id="enjoy-next-event-3" value="3" />
-              <label for="enjoy-next-event-3"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">4</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="enjoy-next-event" type="radio" id="enjoy-next-event-4" value="4" />
-              <label for="enjoy-next-event-4"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">5</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="enjoy-next-event" type="radio" id="enjoy-next-event-5" value="5" />
-              <label for="enjoy-next-event-5"></label>
-            </div>
-          </div>
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button left-align">&nbsp;Very Interested!</div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h5>Please mark the best approximate time on each day for you to attend one of our meetups.</h5>
-        <div class="row meetup-times">
-          <div class="col s4 center-align">
-            <div class="row time-label">&nbsp;</div>
-            <div class="row day-label">Monday</div>
-            <div class="row day-label">Tuesday</div>
-            <div class="row day-label">Wednesday</div>
-            <div class="row day-label">Thursday</div>
-            <div class="row day-label">Friday</div>
-            <div class="row day-label">Saturday</div>
-            <div class="row day-label">Sunday</div>
-          </div>
-          <div class="col s2 center-align">
-            <div class="row time-label">9am</div>
-            <div class="row">
-              <input class="with-gap" name="monday" type="radio" id="monday9" value="Monday 9am" />
-              <label for="monday9"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="tuesday" type="radio" id="tuesday9" value="Tuesday 9am" />
-              <label for="tuesday9"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="wednesday" type="radio" id="wednesday9" value="Wednesday 9am" />
-              <label for="wednesday9"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="thursday" type="radio" id="thursday9" value="Thursday 9am" />
-              <label for="thursday9"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="friday" type="radio" id="friday9" value="Friday 9am" />
-              <label for="friday9"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="saturday" type="radio" id="saturday9" value="Saturday 9am" />
-              <label for="saturday9"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="sunday" type="radio" id="sunday9" value="Sunday 9am" />
-              <label for="sunday9"></label>
-            </div>
-          </div>
-          <div class="col s2 center-align">
-            <div class="row time-label">noon</div>
-            <div class="row">
-              <input class="with-gap" name="monday" type="radio" id="monday12" value="Monday Noon" />
-              <label for="monday12"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="tuesday" type="radio" id="tuesday12" value="Tuesday Noon" />
-              <label for="tuesday12"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="wednesday" type="radio" id="wednesday12" value="Wednesday Noon" />
-              <label for="wednesday12"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="thursday" type="radio" id="thursday12" value="Thursday Noon" />
-              <label for="thursday12"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="friday" type="radio" id="friday12" value="Friday Noon" />
-              <label for="friday12"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="saturday" type="radio" id="saturday12" value="Saturday Noon" />
-              <label for="saturday12"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="sunday" type="radio" id="sunday12" value="Sunday Noon" />
-              <label for="sunday12"></label>
-            </div>
-          </div>
-          <div class="col s2 center-align">
-            <div class="row time-label">3pm</div>
-            <div class="row">
-              <input class="with-gap" name="monday" type="radio" id="monday3" value="Monday 3pm" />
-              <label for="monday3"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="tuesday" type="radio" id="tuesday3" value="Tuesday 3pm" />
-              <label for="tuesday3"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="wednesday" type="radio" id="wednesday3" value="Wednesday 3pm" />
-              <label for="wednesday3"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="thursday" type="radio" id="thursday3" value="Thursday 3pm" />
-              <label for="thursday3"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="friday" type="radio" id="friday3" value="Friday 3pm" />
-              <label for="friday3"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="saturday" type="radio" id="saturday3" value="Saturday 3pm" />
-              <label for="saturday3"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="sunday" type="radio" id="sunday3" value="Sunday 3pm" />
-              <label for="sunday3"></label>
-            </div>
-          </div>
-          <div class="col s2 center-align">
-            <div class="row time-label">6pm</div>
-            <div class="row">
-              <input class="with-gap" name="monday" type="radio" id="monday6" value="Monday 6pm" />
-              <label for="monday6"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="tuesday" type="radio" id="tuesday6" value="Tuesday 6pm" />
-              <label for="tuesday6"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="wednesday" type="radio" id="wednesday6" value="Wednesday 6pm" />
-              <label for="wednesday6"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="thursday" type="radio" id="thursday6" value="Thursday 6pm" />
-              <label for="thursday6"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="friday" type="radio" id="friday6" value="Friday 6pm" />
-              <label for="friday6"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="saturday" type="radio" id="saturday6" value="Saturday 6pm" />
-              <label for="saturday6"></label>
-            </div>
-            <div class="row">
-              <input class="with-gap" name="sunday" type="radio" id="sunday6" value="Sunday 6pm" />
-              <label for="sunday6"></label>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="row">
-          <h5>What topics do you think would be interesting for us to cover in future meetups?</h5>
-          <div class="input-field col s12">
-            <input id="future-topics" type="text">
-            <label for="future-topics">Your answer</label>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="row">
-          <h5>We have expanded our NodeSchool Meetup to include Open Technology Projects in any coding language.
-            Do you see this as a positive change?</h5>
-        </div>
-        <div class="row radio-labels center-align">
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button right-align">No, I prefer NodeSchool only&nbsp;</div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">1</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="positive-change" type="radio" id="positive-change-1" value="1" />
-              <label for="positive-change-1"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">2</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="positive-change" type="radio" id="positive-change-2" value="2" />
-              <label for="positive-change-2"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">3</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="positive-change" type="radio" id="positive-change-3" value="3" />
-              <label for="positive-change-3"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">4</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="positive-change" type="radio" id="positive-change-4" value="4" />
-              <label for="positive-change-4"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">5</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="positive-change" type="radio" id="positive-change-5" value="5" />
-              <label for="positive-change-5"></label>
-            </div>
-          </div>
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button left-align">&nbsp;The more code, the better!</div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="row">
-          <h5>How likely are you to share your personal projects with others
-            (for help, advice, or collaboration)?
-          </h5>
-        </div>
-        <div class="row radio-labels center-align">
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button right-align">My projects are my own&nbsp;</div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">1</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="personal-project-share" type="radio" id="personal-project-share-1" value="1" />
-              <label for="personal-project-share-1"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">2</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="personal-project-share" type="radio" id="personal-project-share-2" value="2" />
-              <label for="personal-project-share-2"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">3</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="personal-project-share" type="radio" id="personal-project-share-3" value="3" />
-              <label for="personal-project-share-3"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">4</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="personal-project-share" type="radio" id="personal-project-share-4" value="4" />
-              <label for="personal-project-share-4"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">5</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="personal-project-share" type="radio" id="personal-project-share-5" value="5" />
-              <label for="personal-project-share-5"></label>
-            </div>
-          </div>
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button left-align">&nbsp;I like to share my projects!</div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="row">
-          <h5>Are you interested in contributing to open source projects that other people propose?</h5>
-        </div>
-        <div class="row radio-labels center-align">
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button right-align">I only want to work on my own stuff&nbsp;</div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">1</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="project-contribute" type="radio" id="project-contribute-1" value="1" />
-              <label for="project-contribute-1"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">2</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="project-contribute" type="radio" id="project-contribute-2" value="2" />
-              <label for="project-contribute-2"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">3</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="project-contribute" type="radio" id="project-contribute-3" value="3" />
-              <label for="project-contribute-3"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">4</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="project-contribute" type="radio" id="project-contribute-4" value="4" />
-              <label for="project-contribute-4"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">5</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="project-contribute" type="radio" id="project-contribute-5" value="5" />
-              <label for="project-contribute-5"></label>
-            </div>
-          </div>
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button left-align">&nbsp;I'd love to contribute to any project!</div>
-          </div>
-        </div>
-      </section>
-      <section id="about">
-        <h4 class="center-align">Tell Us About Yourself!</h4>
-        <hr class="hr-custom">
-      </section>
-      <section>
-        <h5>Would you like to help as a volunteer?</h5>
-        <div class="row">
-          <div class="col s12">
-            <p>
-              <input type="checkbox" id="volunteer-1" value="I would like to mentor others" />
-              <label for="volunteer-1">I would like to mentor others</label>
-            </p>
-            <p>
-              <input type="checkbox" id="volunteer-2" value="I would like to help with sponsorship" />
-              <label for="volunteer-2">I would like to help with sponsorship</label>
-            </p>
-            <p>
-              <input type="checkbox" id="volunteer-3" value="I would like to offer a meeting space" />
-              <label for="volunteer-3">I would like to offer a meeting space</label>
-            </p>
-            <p>
-              <input type="checkbox" id="volunteer-4" value="I would like to help organize meetups" />
-              <label for="volunteer-4">I would like to help organize meetups</label>
-            </p>
-            <p>
-              <input type="checkbox" id="volunteer-5" value="I would like to bring food" />
-              <label for="volunteer-5">I would like to bring food, snacks, coffee, etc.</label>
-            </p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="row">
-          <h5>How familiar are you with server-side development?</h5>
-        </div>
-        <div class="row radio-labels center-align">
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button right-align">What is a server?&nbsp;</div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">1</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="server-side-dev" type="radio" id="server-side-dev-1" value="1" />
-              <label for="server-side-dev-1"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">2</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="server-side-dev" type="radio" id="server-side-dev-2" value="2" />
-              <label for="server-side-dev-2"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">3</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="server-side-dev" type="radio" id="server-side-dev-3" value="3" />
-              <label for="server-side-dev-3"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">4</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="server-side-dev" type="radio" id="server-side-dev-4" value="4" />
-              <label for="server-side-dev-4"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">5</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="server-side-dev" type="radio" id="server-side-dev-5" value="5" />
-              <label for="server-side-dev-5"></label>
-            </div>
-          </div>
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button left-align">&nbsp;I'm a server-side developer</div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="row">
-          <h5>How many years have you programmed?</h5>
-        </div>
-        <div class="row radio-labels center-align">
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button right-align">0 years&nbsp;</div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">1</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="dev-years" type="radio" id="dev-years-1" value="1" />
-              <label for="dev-years-1"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">2</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="dev-years" type="radio" id="dev-years-2" value="2" />
-              <label for="dev-years-2"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">3</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="dev-years" type="radio" id="dev-years-3" value="3" />
-              <label for="dev-years-3"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">4</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="dev-years" type="radio" id="dev-years-4" value="4" />
-              <label for="dev-years-4"></label>
-            </div>
-          </div>
-          <div class="col s1 center-align">
-            <div class="row radio-label">5</div>
-            <div class="row grey lighten-4 radio-button">
-              <input class="with-gap" name="dev-years" type="radio" id="dev-years-5" value="5" />
-              <label for="dev-years-5"></label>
-            </div>
-          </div>
-          <div class="col s3">
-            <div class="row radio-label">&nbsp;</div>
-            <div class="row radio-button left-align">&nbsp;5+ years</div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h5>What coding languages do you typically use?</h5>
-        <div class="row">
-          <div class="col s12">
-            <p>
-              <input type="checkbox" id="langs-1" value="I don't code yet" />
-              <label for="langs-1">I don't code yet</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-2" value="JavaScript" />
-              <label for="langs-2">JavaScript</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-3" value="PHP" />
-              <label for="langs-3">PHP</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-4" value="Python" />
-              <label for="langs-4">Python</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-5" value="Ruby" />
-              <label for="langs-5">Ruby</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-6" value="Java" />
-              <label for="langs-6">Java</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-7" value="Perl" />
-              <label for="langs-7">Perl</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-8" value="Blockly" />
-              <label for="langs-8">Blockly</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-9" value="HTML5 / CSS3" />
-              <label for="langs-9">HTML5 / CSS3</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-10" value="cpp" />
-              <label for="langs-10">cpp</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-11" value="c / c++" />
-              <label for="langs-11">c / c++</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-12" value="lisp" />
-              <label for="langs-12">lisp</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-13" value="Ruby" />
-              <label for="langs-13">Ruby</label>
-            </p>
-            <p>
-              <input type="checkbox" id="langs-14" value="haskell" />
-              <label for="langs-14">haskell</label>
-            </p>
-            <div class="input-field">
-              <input id="otherlangs" type="text">
-              <label for="otherlangs">List other languages here</label>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h5>This form is anonymous. If you would like to discuss further,
-          how can we get in touch? (email, twitter, etc)
-        </h5>
-        <div class="input-field">
-          <input id="contact" type="text">
-          <label for="contact">Contact Me At:</label>
-        </div>
-      </section>
-      <section>
-        <button class="btn blue-grey darken-3 wave-effect waves-light" type="submit" name="action">
-          Submit <i class="material-icons right">send</i>
-        </button>
-      </section>
-    </form>
-  </div>
-  <div id="error-modal" class="modal">
-    <div class="modal-content">
-      <h4>Error!</h4>
-      <p>There has been an unknown error submitting the survey. We're sorry, please try again later!</p>
-    </div>
-    <div class="modal-footer">
-      <a id="close-button" href="#!" class="modal-action modal-close waves-effect btn-flat">Close</a>
-    </div>
-  </div>
-</main>
+		<div class="backgrounds overlay">
+			<div class="background aos-init aos-animate" data-aos="fade-in" data-aos-duration="1500" data-aos-anchor=".section--hero"></div>
+		</div>
+
+		<header class="hero">
+			<div class="hero-center">
+				<h1 class="hero__logo aos-init aos-animate" data-aos="zoom-in">STTS</h1>
+				<h2 class="hero__text aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">Survey Kepuasan Kinerja</h2>
+			</div>
+			<span class="hero__scroll aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">
+				Scroll down <br>
+				<i class="chevron bottom"></i>
+			</span>
+			<a href="http://github.com/michalsnik/aos" target="_blank" class="octocat aos-init aos-animate" data-aos="zoom-out" data-aos-delay="1500">
+			
+			</a>
+		</header>
+
+		<section class="section section--code">
+			<div class="container">
+				<h2 class="section-title">Fade</h2>
+				<div class="code code--small code--left aos-init" data-aos="fade-up">
+					<pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="fade-down">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--left aos-init" data-aos="fade-right">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="fade-left">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--left aos-init" data-aos="fade-up-right">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="fade-up-left">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--left aos-init" data-aos="fade-down-right">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-down-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="fade-down-left">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-down-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--code">
+			<div class="container">
+				<h2 class="section-title">Flip</h2>
+				<div class="code code--small code--left aos-init" data-aos="flip-left">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="flip-right">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--left aos-init" data-aos="flip-up">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-up"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="flip-down">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--code">
+			<div class="container">
+				<h2 class="section-title">Zoom</h2>
+				<div class="code code--small code--left aos-init" data-aos="zoom-in">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="zoom-in-up">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in-up"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--left aos-init" data-aos="zoom-in-down">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="zoom-in-left">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--left aos-init" data-aos="zoom-in-right">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+
+				<div class="code code--small code--right aos-init" data-aos="zoom-out">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--left aos-init" data-aos="zoom-out-up">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out-up"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="zoom-out-down">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--left aos-init" data-aos="zoom-out-right">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--small code--right aos-init" data-aos="zoom-out-left">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--code">
+			<div class="container">
+				<h2 class="section-title">Different settings examples</h2>
+				<div class="code code--left aos-init" data-aos="fade-up" data-aos-duration="3000">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-duration</span>=<span class="hljs-value">"3000"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--right aos-init" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-down"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-easing</span>=<span class="hljs-value">"linear"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-duration</span>=<span class="hljs-value">"1500"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div id="example-anchor" class="code code--left aos-init" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-right"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-offset</span>=<span class="hljs-value">"300"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-easing</span>=<span class="hljs-value">"ease-in-sine"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--right aos-init" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-left"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor</span>=<span class="hljs-value">"#example-anchor"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-offset</span>=<span class="hljs-value">"500"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-duration</span>=<span class="hljs-value">"500"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--left aos-init" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-zoom-in"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-easing</span>=<span class="hljs-value">"ease-in-back"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-delay</span>=<span class="hljs-value">"300"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-offset</span>=<span class="hljs-value">"0"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--right aos-init" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-left"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-easing</span>=<span class="hljs-value">"ease-out-cubic"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-duration</span>=<span class="hljs-value">"2000"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section--code">
+			<div class="container">
+				<h2 class="section-title">Anchor placement</h2>
+
+				<div class="code code--wider code--left aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"top-bottom"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--wider code--right aos-init" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"center-bottom"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--wider code--left aos-init" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"bottom-bottom"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+
+				<div class="code code--wider code--right aos-init" data-aos="fade-up" data-aos-anchor-placement="top-center">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"top-center"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--wider code--left aos-init" data-aos="fade-up" data-aos-anchor-placement="center-center">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"center-center"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+				<div class="code code--wider code--right aos-init" data-aos="fade-up" data-aos-anchor-placement="bottom-center">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"bottom-center"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+				</div>
+
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="container">
+
+			</div>
+		</footer>
+
+		<script>
+			AOS.init({
+				easing: 'ease-out-back',
+				duration: 1000
+			});
+		</script>
+
+		<script>
+			hljs.initHighlightingOnLoad();
+
+			$('.hero__scroll').on('click', function(e) {
+				$('html, body').animate({
+					scrollTop: $(window).height()
+				}, 1200);
+			});
+		</script>
+
 @endsection
