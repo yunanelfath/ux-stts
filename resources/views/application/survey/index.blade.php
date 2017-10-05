@@ -14,15 +14,20 @@
 				<i class="chevron bottom"></i>
 			</span>
 			<a href="http://github.com/michalsnik/aos" target="_blank" class="octocat aos-init aos-animate" data-aos="zoom-out" data-aos-delay="1500">
-			
+
 			</a>
 		</header>
 
 		<section class="section section--code">
 			<div class="container">
-				<h2 class="section-title">Fade</h2>
+				<h2 class="section-title">Tenaga Pengajar</h2>
 				<div class="code code--small code--left aos-init" data-aos="fade-up">
-					<pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+					<code class="html hljs xml">
+						<ul>
+							<li>Kesiapan memberikan kuliah (menjelaskan kontrak belajar, tujuan, materikuliah)</li>
+							<li>Sistem penilaian SAP</li>
+						</ul>
+					</code>
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="fade-down">
 					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>

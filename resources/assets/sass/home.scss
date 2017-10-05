@@ -348,13 +348,13 @@ a {
 	transform: translateZ(1000px);
 }
 .code {
-	width: 40%;
+	width: 100%;
 	clear: both;
 	height: 200px;
 	background: $white;
 	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 2px;
-	margin: 12vh 0;
+	border-radius: 10px;
+	margin: 10vh 0;
 	padding: 10px;
 	pre {
 		height: 100%;
@@ -363,7 +363,7 @@ a {
 	code {
 		height: 100%;
 		margin: 0;
-		padding: 20px 0 0 20px;
+		// padding: 20px 0 0 20px;
 	}
 }
 .code--left {
@@ -458,5 +458,5 @@ a {
 	opacity: 0.8;
 }
 .code--small code {
-	padding-top: 75px;
+	// padding-top: 75px;
 }
