@@ -10,7 +10,7 @@
 				<h2 class="hero__text aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">Survey Kepuasan Kinerja</h2>
 			</div>
 			<span class="hero__scroll aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">
-				Scroll down <br>
+				Click To Start <br>
 				<i class="chevron bottom"></i>
 			</span>
 			<a href="http://github.com/michalsnik/aos" target="_blank" class="octocat aos-init aos-animate" data-aos="zoom-out" data-aos-delay="1500">
@@ -48,6 +48,8 @@
 						$('html, body').animate({
 								scrollTop: 0
 						}, 3000);
+						$(this).attr('data-id',0);
+						$(this).attr('data-section',0);
 						return false;
 					}
 
@@ -87,7 +89,7 @@
 				background: #337ab7;
 				color: #fff;
 				border: none;
-				padding: 5px 20px;
+				padding: 3px 10px;
 				border-radius: 5px;
 				font-size: 20px;
 				text-transform: capitalize;
@@ -97,12 +99,21 @@
 			}
 			.jawaban-items ul li{
 				margin: 0px 5px;
-				width: 50px;
-				padding: 10px 0;
+				width: 35px;
+				padding: 5px 0;
 				display: inline-block;
 				background: tomato;
 				cursor: pointer;
 				border-radius: 5px;
+			}
+			.code{
+				margin-bottom: 3px;
+			}
+			.hljs{
+				border-radius: 5px;
+			}
+			.hljs ul{
+				padding: 0 8px;
 			}
 			.code--wider{
 				width: 100%;
