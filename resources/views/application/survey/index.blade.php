@@ -17,174 +17,393 @@
 
 			</a>
 		</header>
+		<script>
+			$(document).ready(function(){
+				$('.jawaban-items ul li').on('click',function(){
+					$(this).css({background: '#337ab7'});
+				})
+				$('.hero__scroll').on('click',function(e){
+					setTimeout(function(){
+						$('.jawab-container').fadeIn('slow');
+					},400)
+				})
+				$('#next-btn').on('click',function(e){
+					$('.jawaban-items ul li').each(function(){
+						$(this).removeAttr('style');
+					})
+					var id = Number($(this).attr('data-id'));
+					var section = Number($(this).attr('data-section'));
+					var sectionCode = $('.section--code')[section];
+					var animateSection = function(section, id){
+						var sectionCode = $('.section--code')[section];
+						$('html, body').animate({
+								scrollTop: $($(sectionCode).find('.code')[id]).offset().top
+						}, 1000);
+					}
+					animateSection(section, id);
 
+					if(section == $('.section--code').length-1 && id == $(sectionCode).find('.code').length-1){
+						alert('Terima kasih atas partisipasinya!');
+						$('.jawab-container').fadeOut('slow');
+						$('html, body').animate({
+								scrollTop: 0
+						}, 3000);
+						return false;
+					}
+
+					if(id == $(sectionCode).find('.code').length-1){
+						var idx = 0;
+						var sectionx = section+1;
+						// debugger
+						var sectionCode = $('.section--code')[sectionx];
+						// debugger
+						$('html, body').animate({
+								scrollTop: $(sectionCode).find('.section-title').offset().top
+						}, 1000);
+					}else{
+						var idx = id+1;
+					}
+					$(this).attr('data-id',idx)
+					$(this).attr('data-section',sectionx)
+				})
+			});
+		</script>
+		<style>
+			.jawab-container{
+				position: fixed;
+		    bottom: 0;
+		    width: 100%;
+		    height: 60px;
+		    background: #fff;
+		    color: #000;
+		    z-index: 1;
+		    display: table;
+			}
+			.jawaban-items, .btn-container{
+				display: table-cell;
+    		vertical-align: middle;
+			}
+			.btn-container button{
+				background: #337ab7;
+				color: #fff;
+				border: none;
+				padding: 5px 20px;
+				border-radius: 5px;
+				font-size: 20px;
+				text-transform: capitalize;
+			}
+			.jawaban-items ul{
+				text-align: center;
+			}
+			.jawaban-items ul li{
+				margin: 0px 5px;
+				width: 50px;
+				padding: 10px 0;
+				display: inline-block;
+				background: tomato;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			.code--wider{
+				width: 100%;
+			}
+			.code--wider .hljs{
+				padding: 0;
+			}
+		</style>
+			<div class="jawab-container" style="display: none;">
+				<div class="jawaban-items">
+					<ul>
+						<li>A</li>
+						<li>B</li>
+						<li>C</li>
+						<li>D</li>
+						<li>E</li>
+					</ul>
+				</div>
+				<div class="btn-container">
+					<button id="next-btn" data-id="0" data-section="0">next</button>
+				</div>
+			</div>
 		<section class="section section--code">
-			<div class="container">
+			<div class="container tenaga-pengajar">
 				<h2 class="section-title">Tenaga Pengajar</h2>
 				<div class="code code--small code--left aos-init" data-aos="fade-up">
 					<code class="html hljs xml">
 						<ul>
 							<li>Kesiapan memberikan kuliah (menjelaskan kontrak belajar, tujuan, materikuliah)</li>
-							<li>Sistem penilaian SAP</li>
 						</ul>
 					</code>
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="fade-down">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+					<code class="html hljs xml">
+						<ul>
+							<li>Dapat menjawab pertanyaan yang diajukan oleh mahasiswa dengan jelas dan sesua imateri kuliah</li>
+						</ul>
+					</code>
 				</div>
 				<div class="code code--small code--left aos-init" data-aos="fade-right">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+					<code class="html hljs xml">
+						<ul>
+							<li>Pemanfaatan media dan teknologi pembelajaran</li>
+						</ul>
+					</code>
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="fade-left">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+					<code class="html hljs xml">
+						<ul>
+							<li>Kesiapan memberikan kuliah (menjelaskan kontrak belajar, tujuan, materikuliah)</li>
+						</ul>
+					</code>
 				</div>
 				<div class="code code--small code--left aos-init" data-aos="fade-up-right">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+					<code class="html hljs xml">
+						<ul>
+							<li>Obyektifitas dan transparansi dosen dalamm emberikan nilai</li>
+						</ul>
+					</code>
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="fade-up-left">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
-				</div>
-				<div class="code code--small code--left aos-init" data-aos="fade-down-right">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-down-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
-				</div>
-				<div class="code code--small code--right aos-init" data-aos="fade-down-left">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-down-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+					<code class="html hljs xml">
+						<ul>
+							<li>Adanya umpan balik terhadap tugas (Dosen mereview hasil tugas)</li>
+						</ul>
+					</code>
 				</div>
 			</div>
 		</section>
 
 		<section class="section section--code">
 			<div class="container">
-				<h2 class="section-title">Flip</h2>
+				<h2 class="section-title">Sarana Dan Prasarana</h2>
 				<div class="code code--small code--left aos-init" data-aos="flip-left">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+						<code class="html hljs xml">
+							<ul>
+								<li>Sarana pembelajaran yang tersedia di ruangan kuliah</li>
+							</ul>
+						</code>
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="flip-right">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+						<code class="html hljs xml">
+							<ul>
+								<li>Ruang kuliah tertata dengan bersih dan rapih</li>
+							</ul>
+						</code>
 				</div>
 				<div class="code code--small code--left aos-init" data-aos="flip-up">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-up"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+						<code class="html hljs xml">
+							<ul>
+								<li>Ketersedian buku referensi yang di perpustakaan</li>
+							</ul>
+						</code>
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="flip-down">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+						<code class="html hljs xml">
+							<ul>
+								<li>Ketersediaan fasilitas kamar kecil yang cukup dan bersih</li>
+							</ul>
+						</code>
 				</div>
 			</div>
 		</section>
 
 		<section class="section section--code">
 			<div class="container">
-				<h2 class="section-title">Zoom</h2>
+				<h2 class="section-title">Staff</h2>
 				<div class="code code--small code--left aos-init" data-aos="zoom-in">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+										<code class="html hljs xml">
+											<ul>
+												<li>Kemampuan staf akademik untuk melayani administrasi kemahasiswaan</li>
+											</ul>
+										</code>
+
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="zoom-in-up">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in-up"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+											<code class="html hljs xml">
+												<ul>
+													<li>Kualitas staf akademik untuk memenuhi kepentingan mahasiswa</li>
+												</ul>
+											</code>
 				</div>
 				<div class="code code--small code--left aos-init" data-aos="zoom-in-down">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+											<code class="html hljs xml">
+												<ul>
+													<li>Kualitas staf akademik untuk memenuhi kepentingan mahasiswa</li>
+												</ul>
+											</code>
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="zoom-in-left">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+											<code class="html hljs xml">
+												<ul>
+													<li>Kualitas staf akademik untuk memenuhi kepentingan mahasiswa</li>
+												</ul>
+											</code>
 				</div>
 				<div class="code code--small code--left aos-init" data-aos="zoom-in-right">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-in-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+											<code class="html hljs xml">
+												<ul>
+													<li>Kualitas staf akademik untuk memenuhi kepentingan mahasiswa</li>
+												</ul>
+											</code>
 				</div>
 
 				<div class="code code--small code--right aos-init" data-aos="zoom-out">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+											<code class="html hljs xml">
+												<ul>
+													<li>Kualitas staf akademik untuk memenuhi kepentingan mahasiswa</li>
+												</ul>
+											</code>
 				</div>
 				<div class="code code--small code--left aos-init" data-aos="zoom-out-up">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out-up"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+											<code class="html hljs xml">
+												<ul>
+													<li>Membantu mahasiswa apabila menghadapi masalah akademik</li>
+												</ul>
+											</code>
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="zoom-out-down">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+											<code class="html hljs xml">
+												<ul>
+													<li>Rektor beserta jajarannya menyediakan waktu bagi orang tua mahasiswa untuk berkonsultasi</li>
+												</ul>
+											</code>
 				</div>
 				<div class="code code--small code--left aos-init" data-aos="zoom-out-right">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+											<code class="html hljs xml">
+												<ul>
+													<li>Memberikan bantuan asuransi bagi mahasiswa yang mendapatkan musibah kecelakaan</li>
+												</ul>
+											</code>
 				</div>
 				<div class="code code--small code--right aos-init" data-aos="zoom-out-left">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"zoom-out-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+											<code class="html hljs xml">
+												<ul>
+													<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+												</ul>
+											</code>
 				</div>
 			</div>
 		</section>
 
 		<section class="section section--code">
 			<div class="container">
-				<h2 class="section-title">Different settings examples</h2>
+				<h2 class="section-title">Survey Akademik</h2>
 				<div class="code code--left aos-init" data-aos="fade-up" data-aos-duration="3000">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-duration</span>=<span class="hljs-value">"3000"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 				<div class="code code--right aos-init" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-down"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-easing</span>=<span class="hljs-value">"linear"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-duration</span>=<span class="hljs-value">"1500"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 				<div id="example-anchor" class="code code--left aos-init" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-right"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-offset</span>=<span class="hljs-value">"300"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-easing</span>=<span class="hljs-value">"ease-in-sine"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 				<div class="code code--right aos-init" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-left"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor</span>=<span class="hljs-value">"#example-anchor"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-offset</span>=<span class="hljs-value">"500"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-duration</span>=<span class="hljs-value">"500"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 				<div class="code code--left aos-init" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-zoom-in"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-easing</span>=<span class="hljs-value">"ease-in-back"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-delay</span>=<span class="hljs-value">"300"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-offset</span>=<span class="hljs-value">"0"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 				<div class="code code--right aos-init" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"flip-left"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-easing</span>=<span class="hljs-value">"ease-out-cubic"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-duration</span>=<span class="hljs-value">"2000"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 			</div>
 		</section>
 
 		<section class="section section--code">
 			<div class="container">
-				<h2 class="section-title">Anchor placement</h2>
+				<h2 class="section-title">Alumni</h2>
 
 				<div class="code code--wider code--left aos-init" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"top-bottom"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 				<div class="code code--wider code--right aos-init" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"center-bottom"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 				<div class="code code--wider code--left aos-init" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"bottom-bottom"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 
 				<div class="code code--wider code--right aos-init" data-aos="fade-up" data-aos-anchor-placement="top-center">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"top-center"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 				<div class="code code--wider code--left aos-init" data-aos="fade-up" data-aos-anchor-placement="center-center">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"center-center"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 				<div class="code code--wider code--right aos-init" data-aos="fade-up" data-aos-anchor-placement="bottom-center">
-					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-aos</span>=<span class="hljs-value">"fade-up"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-attribute">data-aos-anchor-placement</span>=<span class="hljs-value">"bottom-center"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+																<code class="html hljs xml">
+																	<ul>
+																		<li>Staf administrasi akademik santun dalam memberikan pelayan</li>
+																	</ul>
+																</code>
 				</div>
 
 			</div>
