@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Application;
 
 use App\Base\Controllers\ApplicationController;
+use App\Questioner;
 
 class HomeController extends ApplicationController
 {
@@ -13,7 +14,17 @@ class HomeController extends ApplicationController
      */
     public function index()
     {
-        // $articles = $this->language->articles()->published()->orderBy('published_at', 'desc')->paginate(5);
-        return view('application.survey.index');
+        $questioner = new Questioner();
+        $lists = $questioner->get();
+        $datas = [];
+        foreach ($lists as $key => $value) {
+          $datas['questionItems'][$value->category_name][] = [
+              'question'=> $value->question,
+              'answer_items'=> $value->answer_items,
+              'category_name'=> $value->category_name
+          ];
+        }
+        $datas = json_encode($datas);
+        return view('application.survey.index',compact('datas'));
     }
 }

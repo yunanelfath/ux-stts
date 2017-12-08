@@ -48,13 +48,7 @@ GeneralStore = _.assign({}, EventEmitter.prototype,
     user:
       token: ''
   personality: {
-    title: ''
-    lead: ''
     id: null
-    color: ''
-    image: newImage()
-    destroyableImages: []
-    resultItems: []
     questionItems: []
   }
 

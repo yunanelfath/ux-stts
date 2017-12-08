@@ -1,0 +1,62 @@
+.jawab-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  color: #000;
+  z-index: 1;
+  display: table;
+}
+
+.jawaban-items {
+  display: table-cell;
+  vertical-align: middle;
+  ul {
+    text-align: center;
+    li {
+      margin: 0px 5px;
+      width: 35px;
+      padding: 5px 0;
+      display: inline-block;
+      background: tomato;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 5px;
+    }
+  }
+}
+
+.btn-container {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px;
+  button {
+    background: #337ab7;
+    color: #fff;
+    border: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+}
+
+
+.code {
+  margin-bottom: 3px;
+}
+
+.hljs {
+  border-radius: 5px;
+  ul {
+    padding: 0 8px;
+  }
+}
+
+.code--wider {
+  width: 100%;
+  .hljs {
+    padding: 0;
+  }
+}

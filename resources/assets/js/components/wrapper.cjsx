@@ -15,13 +15,14 @@ Wrapper = (GeneralStore, AppDispatcher) =>
 
       # set default state picked from store
       @state = {
-        general: GeneralStore.general
+        questioner: GeneralStore.personality
         mainApp: GeneralStore.mainApp
       }
 
     componentDidMount: ->
       # add listener to connecting store
       @listener = GeneralStore.addChangeListener(@_onChange.bind(@)) # this/@ should bind manuallyy
+      console.log @state.questioner
 
     componentWillUnmount: ->
       @listener.remove()
@@ -29,7 +30,7 @@ Wrapper = (GeneralStore, AppDispatcher) =>
     _onChange: ->
       # set State every store has changed
       @setState(
-        general: GeneralStore.general
+        questioner: GeneralStore.personality
         mainApp: GeneralStore.mainApp
       )
 
@@ -41,10 +42,28 @@ Wrapper = (GeneralStore, AppDispatcher) =>
       )
 
     render: ->
-      { general, mainApp } = @state
+      { questioner, mainApp } = @state
 
       jawabanItemRow = (item, idx) =>
-        <li onClick={onChooseAnswer.bind(@)} key={idx}>{item.name}</li>
+        <li key={idx}>{item}</li>
+      titleItemRow = (item, idx) =>
+        <div className="code code--small code--left aos-init aos-animate" data-aos="fade-up" key={idx}>
+          <code className="html hljs xml">
+            <ul>
+              <li>{item.question}</li>
+            </ul>
+          </code>
+        </div>
+
+      questionItemRow = (items, idx) =>
+        <section className="section section--code" key={idx}>
+          <div className="container tenaga-pengajar">
+            <h2 className="section-title">{items[0].category_name}</h2>
+            {
+              items.map(titleItemRow)
+            }
+          </div>
+        </section>
 
       <div>
         <div className='backgrounds overlay'>
@@ -57,11 +76,25 @@ Wrapper = (GeneralStore, AppDispatcher) =>
           </div>
           <span className="hero__scroll aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">Click To Start<i className="chevron bottom"></i></span>
         </header>
+
         <div className="jawab-container">
+          <div className="btn-container">
+            <button>back</button>
+          </div>
           <div className="jawaban-items">
-            test
+            <ul>
+              {
+                JSON.parse(questioner.questionItems[0][0].answer_items).map(jawabanItemRow)
+              }
+            </ul>
+          </div>
+          <div className="btn-container">
+            <button>next</button>
           </div>
         </div>
+        {
+          questioner.questionItems.map(questionItemRow)
+        }
       </div>
 
 module.exports = Wrapper(GeneralStore, AppDispatcher)
