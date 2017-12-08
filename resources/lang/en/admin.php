@@ -138,6 +138,11 @@ return [
             "all"                   => "All Articles",
             "root"                  => "Articles"
         ],
+        "questioner" => [
+            "add"                   => "Add an Questioner",
+            "all"                   => "All Questioner",
+            "root"                  => "Questioner"
+        ],
         "category" => [
             "add"                   => "Add a Category",
             "all"                   => "All Categories",

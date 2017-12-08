@@ -38,14 +38,8 @@ elixir.extend('home_new', function(message){
         },
         module: {
           loaders: [
-            {
-              test: /\.(png|woff|woff2|eot|ttf|svg|jpg|jpeg)$/,
-              use: [
-                {
-                  loader: 'ignore-loader'
-                }
-              ]
-            },
+            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff' },
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' },
             {
               test: /\.s?css$/,
               exclude: /node_modules/,
@@ -54,25 +48,19 @@ elixir.extend('home_new', function(message){
                 {
                   loader: 'style-loader',
                   options: {
-                    modules: true,
-                    localIdentName: '___[hash:base64:5]',
                     minimize: true
                   }
                 },
                 {
                   loader: 'css-loader',
                   options: {
-                    modules: true,
-                    localIdentName: '___[hash:base64:5]',
                     minimize: true
                   }
                 },
                 {
                   loader: 'ruby-sass-loader',
                   options: {
-                    modules: true,
                     compass: true,
-                    localIdentName: '___[hash:base64:5]',
                     minimize: true
                   }
                 }

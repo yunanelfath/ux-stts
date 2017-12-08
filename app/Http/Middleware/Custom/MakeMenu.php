@@ -56,6 +56,18 @@ class MakeMenu
                 ->icon($this->circle)
                 ->prependIcon();
 
+                            $questioner = $menu->add($this->translate('questioner.root'), '#')
+                                ->icon('folder')
+                                ->prependIcon();
+
+                            $questioner->add($this->translate('questioner.add'), ['route' => 'admin.questioner.create'])
+                                ->icon($this->circle)
+                                ->prependIcon();
+
+                            $questioner->add($this->translate('questioner.all'), ['route' => 'admin.questioner.index'])
+                                ->icon($this->circle)
+                                ->prependIcon();
+
             $categories = $menu->add($this->translate('category.root'), '#')
                 ->icon('book')
                 ->prependIcon();

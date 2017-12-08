@@ -43,6 +43,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::patch('setting/{setting}', ['as' => 'admin.setting.update', 'uses' => 'SettingController@patchSettings']);
     // Resources
     Route::resource('article', 'ArticleController');
+    Route::resource('questioner', 'QuestionerController');
     Route::resource('category', 'CategoryController');
     Route::resource('language', 'LanguageController');
     Route::resource('page', 'PageController');

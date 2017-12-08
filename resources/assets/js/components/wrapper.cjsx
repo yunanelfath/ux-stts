@@ -2,7 +2,6 @@ React = require('react')
 ReactDOM = require('react-dom')
 AppDispatcher = require('./../action/dispatcher.cjsx')
 GeneralStore = require('./../stores/general.cjsx')
-styles = require('./../../sass/home.scss')
 # OverlayBackground = require('./overlay.cjsx')
 # UploadComponent = require('./../../../../../js/components/upload.cjsx')
 
@@ -23,7 +22,6 @@ Wrapper = (GeneralStore, AppDispatcher) =>
     componentDidMount: ->
       # add listener to connecting store
       @listener = GeneralStore.addChangeListener(@_onChange.bind(@)) # this/@ should bind manuallyy
-      console.log styles
 
     componentWillUnmount: ->
       @listener.remove()
@@ -49,14 +47,15 @@ Wrapper = (GeneralStore, AppDispatcher) =>
         <li onClick={onChooseAnswer.bind(@)} key={idx}>{item.name}</li>
 
       <div>
-        <div className={styles.backgrounds+" "+styles.overlay}>
-          <div className={styles.background+" "+styles['aos-animate']} data-aos="fade-in" data-aos-duration="1500" data-aos-anchor=".section-her"></div>
+        <div className='backgrounds overlay'>
+          <div className='background aos-animate' data-aos="fade-in" data-aos-duration="1500" data-aos-anchor=".section-her"></div>
         </div>
-        <header className={styles.hero}>
-          <div className={styles['hero-center']}>
-            <h1 className={styles.hero__logo+" "+styles['aos-animate']} data-aos="zoom-in">STTS</h1>
-            <h2 className={styles.hero__text+" "+styles['aos-animate']} data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">Survey Kepuasan Kinerja</h2>
+        <header className='hero'>
+          <div className='hero-center'>
+            <h1 className='hero__logo aos-animate' data-aos="zoom-in">STTS</h1>
+            <h2 className='hero__text aos-animate' data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400">Survey Kepuasan Kinerja</h2>
           </div>
+          <span className="hero__scroll aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">Click To Start<i className="chevron bottom"></i></span>
         </header>
         <div className="jawab-container">
           <div className="jawaban-items">
